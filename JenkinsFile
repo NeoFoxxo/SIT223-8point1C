@@ -14,16 +14,20 @@ pipeline {
         }
         post {
           success {
-            mail to: "private8981@gmail.com",
-            subject: "Test pipeline results",
-            body: "The unit and integration tests were successful!",
-            attachLog: true
+            emailext(
+              to: "private8981@gmail.com",
+              subject: "Test pipeline results",
+              body: "The unit and integration tests were successful!",
+              attachLog: true
+            )
           }
           failure {
-            mail to: "private8981@gmail.com",
-            subject: "Test pipeline results",
-            body: "The unit and integration tests have failed!",
-            attachLog: true
+            emailext(
+              to: "private8981@gmail.com",
+              subject: "Test pipeline results",
+              body: "The unit and integration tests have failed!",
+              attachLog: true
+            )
           }
         }
       }
@@ -38,16 +42,20 @@ pipeline {
         }
         post {
           success {
-            mail to: "private8981@gmail.com",
-            subject: "Security Scan pipeline results",
-            body: "The security scan was successful!",
-            attachLog: true
+            emailext(
+              to: "private8981@gmail.com",
+              subject: "Security Scan pipeline results",
+              body: "The security scan was successful!",
+              attachLog: true
+            )
           }
           failure {
-            mail to: "private8981@gmail.com",
-            subject: "Security Scan pipeline results",
-            body: "The security scan failed!",
-            attachLog: true
+            emailext(
+              to: "private8981@gmail.com",
+              subject: "Security Scan pipeline results",
+              body: "The security scan failed!",
+              attachLog: true
+            )
           }
         }
       }
