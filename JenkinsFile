@@ -16,12 +16,14 @@ pipeline {
           success {
             mail to: "private8981@gmail.com",
             subject: "Test pipeline results",
-            body: "The unit and integration tests were successful!"
+            body: "The unit and integration tests were successful!",
+            attachmentsPattern: "**/build.log"
           }
           failure {
             mail to: "private8981@gmail.com",
             subject: "Test pipeline results",
-            body: "The unit and integration tests have failed!"
+            body: "The unit and integration tests have failed!",
+            attachmentsPattern: "**/build.log"
           }
         }
       }
@@ -38,12 +40,14 @@ pipeline {
           success {
             mail to: "private8981@gmail.com",
             subject: "Security Scan pipeline results",
-            body: "The security scan was successful!"
+            body: "The security scan was successful!",
+            attachmentsPattern: "**/build.log"
           }
           failure {
             mail to: "private8981@gmail.com",
             subject: "Security Scan pipeline results",
-            body: "The security scan failed!"
+            body: "The security scan failed!",
+            attachmentsPattern: "**/build.log"
           }
         }
       }
